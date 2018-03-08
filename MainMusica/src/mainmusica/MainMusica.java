@@ -1,32 +1,85 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mainmusica;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+
 public class MainMusica {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        
-        PlayList a = new PlayList();
-        Atributos c = new Atributos("nombreCancion", 1, 2.3, "baraku", "nombreAlbum", 2000, "chuli");
-        Cancion b = new Cancion(c);
-       
-      //  System.out.println(a.mostrarCanciones());
-       
-       List <Cancion> canciones = new ArrayList(); 
-         System.out.println("comienzo");
-       for (Cancion elementos : canciones) {
-             System.out.println ("ID : "+elementos.getID()+"\n Titulo : "+elementos.getNombreCancion()+"\n Artista : "+elementos.getCantante()+"\n Album : "+elementos.getNombreAlbum()+"\n Duracion : "+elementos.getDuracion());
-       
-       }
-        System.out.println("final");
+        // variables---
+        Scanner opcion = new Scanner(System.in);
+        List<Coleccion> a = new ArrayList();
+        int eleccion;
+        Coleccion b;
+        int cant = 0, num = 0;
+        //CREAR CANCIONES Y PLAYLIST...
+        System.out.println("Ingrese 1 para crear cancion y 2 para playlist ");
+        eleccion = opcion.nextInt();
+        if (eleccion == 1) {
+            System.out.println("Cuantas canciones quiere crear?");
+            cant = opcion.nextInt();
+        } else {
+            if (true) {
+                System.out.println("Cuantas playlist quiere crear? ");
+                cant = opcion.nextInt();
+
+            }
+        }
+
+        while (num < cant) {
+            switch (eleccion) {
+                case 1:
+                    String nombreCancion,
+                     album,
+                     cantante,
+                     genero;
+                    int año,
+                     duracion,
+                     ID;
+                    System.out.println("ingrese nombre de la cancion : ");
+                    nombreCancion = opcion.next();
+                    System.out.println("nombre del album  ");
+                    album = opcion.next();
+                    System.out.println("cantante : ");
+                    cantante = opcion.next();
+                    System.out.println("genero : ");
+                    genero = opcion.next();
+                    System.out.println("año de la cancion : ");
+                    año = opcion.nextInt();
+                    System.out.println("duracion d la cancion en seg : ");
+                    duracion = opcion.nextInt();
+                    System.out.println("Ingrese su ID ");
+                    ID = opcion.nextInt();
+
+                    b = new Cancion(nombreCancion, album, cantante, genero, año, duracion, ID);
+                    a.add(ID, b);
+                    break;
+
+                case 2:
+                    System.out.println("Nombre de la playlist : ");
+                    String nombrePlayList = opcion.next();
+                    b = new PlayList(nombrePlayList);
+                    a.add(b);
+                    break;
+
+            }
+            num++;
+        }
+
+        //PONER CANCIONCES EN PLAYLIST...
+        System.out.println("Ingrese el ID de la cancion y luego el nombre de la playlist donde quiere ubicarlo");
+        int id =  opcion.nextInt();
+        String nombrePlayList = opcion.next();
+        for (Coleccion coleccion : a) {
+            for (Cancion canciones : coleccion.b) {
+                if (canciones.getID() == id && a.getClass().getName().equals(nombrePlayList)){
+                
+            }
+            
+
+        }
+
     }
-    
+
 }
