@@ -26,8 +26,8 @@ public class PlayList extends Coleccion {
         return colecciones;
     }
 
-    public void setColecciones(List<Coleccion> colecciones) {
-        this.colecciones = colecciones;
+    public void addElemento(Coleccion element) {
+        colecciones.add(element);
     }
 
     public int getCantidad() {
