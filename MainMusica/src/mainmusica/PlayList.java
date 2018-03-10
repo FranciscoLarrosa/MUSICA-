@@ -3,41 +3,49 @@ package mainmusica;
 import java.util.List;
 import java.util.ArrayList;
 
-public class PlayList {
+public class PlayList extends Coleccion {
 
-    private float duracion;
+    private int duracion;
+    private String nombre;
+    List<Coleccion> colecciones = new ArrayList<>();
 
-    List<Cancion> canciones = new ArrayList<>();
-
-    public PlayList() {
+    public PlayList(String nombre) {
+        this.nombre = nombre;
 
     }
 
-    public void agregarCanciones(Cancion unaCancion) {
-        canciones.add(unaCancion);
+    public String getNombre() {
+        return nombre;
     }
 
-    public float duracionTotal() {
-
-        for (Cancion a : canciones) {
-            duracion += a.getDuracion();
-        }
-        return duracion;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
-    
-    public int totalCanciones(){
+
+    public List<Coleccion> getColecciones() {
+        return colecciones;
+    }
+
+    public void setColecciones(List<Coleccion> colecciones) {
+        this.colecciones = colecciones;
+    }
+
+    public int getCantidad() {
         int total = 0;
-        for (Cancion ab : canciones) {
-           total += canciones.size();
+        for (Coleccion coleccione : colecciones) {
+            total += coleccione.getCantidad();
+
         }
         return total;
+
     }
-    
-    public String mostrarCanciones (){
-        for (Cancion elementos : canciones) {
-            return " ID : "+elementos.getID()+"\n Titulo : "+elementos.getNombreCancion()+"\n Artista : "+elementos.getCantante()+"\n Album : "+elementos.getNombreAlbum()+"\n Duracion : "+elementos.getDuracion();
+
+    public int getDuracion() {
+        for (Coleccion coleccion : colecciones) {
+            duracion += coleccion.getDuracion();
         }
-        return"aa";
+
+        return duracion;
     }
-    
+
 }
