@@ -71,10 +71,21 @@ public class MainMusica {
         System.out.println("Ingrese el ID de la cancion y luego el nombre de la playlist donde quiere ubicarlo");
         int id =  opcion.nextInt();
         String nombrePlayList = opcion.next();
+<<<<<<< HEAD
         
             
 
         
+=======
+        for (Coleccion coleccion : a) {
+            for (Cancion canciones : coleccion.b) {
+                if (canciones.getID() == id && a.getClass().getName().equals(nombrePlayList)){
+                
+            }
+            
+
+        }
+>>>>>>> master
 
     }
 
