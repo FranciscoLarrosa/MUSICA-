@@ -11,6 +11,7 @@ public class MainMusica {
         Scanner opcion = new Scanner(System.in);
         List<Coleccion> a = new ArrayList();
         int eleccion;
+        Coleccion jColeccion =  new Coleccion();
         PlayList defaultt = new PlayList("Default");
 
         int cant = 0, num = 0;
