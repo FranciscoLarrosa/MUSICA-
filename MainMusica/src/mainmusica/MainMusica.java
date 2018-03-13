@@ -78,7 +78,9 @@ public class MainMusica {
 
         Cancion unaCancion2 = new Cancion(nombreCancion, album, cantante, genero, año, duracion, ID);
         
-        d.addElemento(unaCancion2);
+        d.addElemento(unaCancion2); 
+        d.getCantidad();
+        d.getColecciones();
         
 
     }
